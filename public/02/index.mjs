@@ -5,6 +5,12 @@ export function add (num = 1) {
   return counter;
 }
 
+
+
+
+
+
+
 export const object = {
   counter: 0,
   add (num = 1) {

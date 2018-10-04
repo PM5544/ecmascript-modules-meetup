@@ -5,7 +5,7 @@
 <body>
   <header><a href="/">H</a><a href="/01/">01</a><a href="/02/">02</a><a href="/03/">03</a></header>
   <main>
-    <h2>Old vs new</h2>
+    <h2>Script vs module</h2>
     <ul>
       <li>script and module comparison</li>
       <li>&lt;script&gt; --> old, modules --> new</li>
@@ -17,14 +17,45 @@
 
 
 
+  <!-- SCOPE -->
+
+  <script>
+  console.group('scope');
+
+
+  // variables with 'var' created in the global scope
+
+  var someValue = 'something';
+  </script>
 
 
   <script>
-    console.group('script');
+  
+  // shared by all standard <script>'s on this page'
+
+  console.log(someValue);
+  console.log(this.someValue);
+  console.log(window.someValue);
+  console.log(top.someValue);
+
+
+  console.groupEnd();
+  </script>
+
+
+
+
+
+
+  <!-- script vs module -->
+
+
+  <script>
+    console.groupCollapsed('script');
     // standard old script...
   
     // this --> window
-    console.log(this);
+    console.dir(this);
 
 
     function test () {
@@ -36,6 +67,12 @@
    
     console.groupEnd();
   </script>
+
+
+
+
+
+
 
   <script type="module">
     console.groupCollapsed('module');
@@ -70,7 +107,10 @@
 
 
 
+
+
   <!-- old vs new -->
+
   <script nomodule src="transpiled-sources.js"></script>
   <script type="module" src="non-transpiled-sources.mjs"></script>
 
@@ -83,6 +123,7 @@
 
 
 
+  <!-- shiny features -->
 
 
   <script type="module">
@@ -110,9 +151,13 @@
 
     // even async/await
     (async () => {
-      const baconIpsumContent =
-        await fetch('https://baconipsum.com/api/?type=meat-and-filler&format=text')
-        .then(r => r.text());
+      let baconIpsumContent;
+      try {
+        baconIpsumContent = await fetch('https://baconipsum.com/api/?type=meat-and-filler&format=text')
+          .then(r => r.text());
+      } catch (err) {
+        baconIpsumContent = 'oopsie no internet';
+      }
       console.groupCollapsed('async');
 
       console.log(baconIpsumContent);

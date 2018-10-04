@@ -10,10 +10,14 @@ body {
   margin: 0;
   user-select: none;
 }
+header, main {
+  max-width: 40rem;
+  margin: 0 auto;
+}
 header {
   display: flex;
   height: 2rem;
-  border-bottom: 1px solid #353131;
+  border: 1px solid #353131;
 }
 header > a {
   flex: 1;
@@ -27,7 +31,7 @@ main {
   height: calc( 100vh - 2rem);
   text-align: center;
   padding: 2rem;
-  color:#c1d0d8
+  color:#d1e0e8
 }
 h1, h2, h3 {
   margin: 0 0 2rem 0;
@@ -42,6 +46,7 @@ ul {
 }
 .row ul {
   flex: 1;
+  max-width: 11rem;
   list-style-position: inside;
   margin-top: 1rem;
   margin-left: 3px;
