@@ -1,0 +1,95 @@
+<!doctype html><html><head><meta charset="utf-8">
+  <title>module testpage</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+<body>
+  <div><a href="/01/">01</a><a href="/02/">02</a><a href="/03/">03</a></div>
+  <main>
+    <p>"old" script and module comparison</p>
+  </main>
+
+
+
+  <script>
+    console.group('script');
+    // standard old script...
+
+    function test () {
+      var someVar = 'blaat';
+      console.log(arguments.callee);
+    }
+
+    test();
+
+    // this --> window
+    console.log(this);
+    console.groupEnd();
+  </script>
+
+
+
+
+
+
+  <script type="module">
+    console.groupCollapsed('module');
+    // modules are 'use strict' by default and have their own 'scope'
+
+    function test() {
+      console.log(arguments.callee);
+    }
+
+    try {
+      test();
+    } catch(e) {
+      console.error(e.message);
+    }
+
+    // this --> undefined
+    console.log(this);
+    console.groupEnd();
+
+  </script>
+
+
+
+
+
+
+  <script type="module">
+    console.groupCollapsed('coolStuff');
+
+    // module support means we can use shiny new features
+
+    // const, let, array destrucuring, spread, template strings
+    const [ first, ...rest ] = 'some-lowercase-string';
+    console.log(`${first.toUpperCase()}${rest.join('')}`);
+
+    // phat arrow functions, rest parameter
+    const restFunction = (...args) => args.join('');
+    console.log(restFunction('n', "o", 't', '-','s', ...rest, ' ', 'anymore'));
+
+    const a = { blaat: 3, something: 'something', property: 'value', another: 'else' };
+
+    // object destructuring, spread
+    const b = { ...a, something: 'iets' };
+    const { blaat, ...left } = b;
+
+    // shorthand object creation
+    console.log( { blaat }, left );
+
+
+    // even dynamic import an async/await
+    (async () => {
+      const { message } = await import('./module.mjs')
+      console.log(message);
+      console.groupEnd();
+    })();
+  </script>
+
+
+  <!-- old vs new -->
+  <script nomodule src="transpiled-sources.js"></script>
+  <script type="module" src="non-transpiled-sources.mjs"></script>
+</body>
+</html>
