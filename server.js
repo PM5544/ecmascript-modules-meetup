@@ -16,8 +16,9 @@ reactEcmascript().then(sources => {
 const server = http.createServer((request, response) => {
   return handler(request, response, {
     public: "./public",
-    cleanUrls: true,
+    trailingSlash: true,
     rewrites: [
+      { "source": "public/", "destination": "/index.html" },
       { "source": "public/01/", "destination": "/index.html" },
       { "source": "public/02/", "destination": "/index.html" },
       { "source": "public/03/", "destination": "/index.html" }

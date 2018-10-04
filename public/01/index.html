@@ -3,37 +3,48 @@
   <link rel="stylesheet" type="text/css" href="../styles.css" />
 </head>
 <body>
-  <div><a href="/01/">01</a><a href="/02/">02</a><a href="/03/">03</a></div>
+  <header><a href="/">H</a><a href="/01/">01</a><a href="/02/">02</a><a href="/03/">03</a></header>
   <main>
-    <p>"old" script and module comparison</p>
+    <h2>Old vs new</h2>
+    <ul>
+      <li>script and module comparison</li>
+      <li>&lt;script&gt; --> old, modules --> new</li>
+      <li>use new shiny stuff</li>
+    </ul>
   </main>
+
+
+
+
 
 
 
   <script>
     console.group('script');
     // standard old script...
+  
+    // this --> window
+    console.log(this);
+
 
     function test () {
-      var someVar = 'blaat';
       console.log(arguments.callee);
     }
 
     test();
 
-    // this --> window
-    console.log(this);
+   
     console.groupEnd();
   </script>
-
-
-
-
-
 
   <script type="module">
     console.groupCollapsed('module');
     // modules are 'use strict' by default and have their own 'scope'
+
+ 
+    // this --> undefined
+    console.log(this);
+
 
     function test() {
       console.log(arguments.callee);
@@ -45,11 +56,29 @@
       console.error(e.message);
     }
 
-    // this --> undefined
-    console.log(this);
+    
     console.groupEnd();
 
   </script>
+
+
+
+
+
+
+
+
+
+
+  <!-- old vs new -->
+  <script nomodule src="transpiled-sources.js"></script>
+  <script type="module" src="non-transpiled-sources.mjs"></script>
+
+
+
+
+
+
 
 
 
@@ -79,17 +108,28 @@
     console.log( { blaat }, left );
 
 
-    // even dynamic import an async/await
+    // even async/await
     (async () => {
-      const { message } = await import('./module.mjs')
-      console.log(message);
+      const baconIpsumContent =
+        await fetch('https://baconipsum.com/api/?type=meat-and-filler&format=text')
+        .then(r => r.text());
+      console.groupCollapsed('async');
+
+      console.log(baconIpsumContent);
+      
       console.groupEnd();
     })();
+    
+    // and even dynamic import!
+    // this doesn't work yet in Firefox
+//     (async () => {
+//       const { message } = await import('./module.mjs')
+//       console.log(message);
+//       console.groupEnd();
+//     })();
+
+
   </script>
 
-
-  <!-- old vs new -->
-  <script nomodule src="transpiled-sources.js"></script>
-  <script type="module" src="non-transpiled-sources.mjs"></script>
 </body>
 </html>

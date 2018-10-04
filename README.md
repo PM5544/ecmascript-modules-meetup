@@ -8,7 +8,8 @@ Start the local web server by doing
 * `$ cd fronteers-jam-session-2018-10-04`
 * `$ npm i`
 * `$ npm start`
-* open http://localhost:1337 in any browser supporting native ecmascript modules and module loading
+* open http://localhost:1337 in any browser supporting native ecmascript modules and module loading and check the output in the console
+
 
 
 ## Some more resources
@@ -22,3 +23,5 @@ Start the local web server by doing
 - [ES6 modules](http://2ality.com/2014/09/es6-modules-final.html)
 - [Module loading support](https://caniuse.com/#feat=es6-module)
 - [Using ES6 modules](https://developers.google.com/web/fundamentals/primers/modules)
+- [ESM in Node.js](https://nodejs.org/api/esm.html) and [Using ES modules natively in Node.js](http://2ality.com/2017/09/native-esm-node.html)
+

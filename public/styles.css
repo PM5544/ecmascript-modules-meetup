@@ -10,12 +10,12 @@ body {
   margin: 0;
   user-select: none;
 }
-body > div {
+header {
   display: flex;
   height: 2rem;
   border-bottom: 1px solid #353131;
 }
-body > div > a {
+header > a {
   flex: 1;
   text-align: center;
   line-height: 2rem;
@@ -29,13 +29,22 @@ main {
   padding: 2rem;
   color:#c1d0d8
 }
-h1 {
+h1, h2, h3 {
   margin: 0 0 2rem 0;
 }
 ul {
   padding: 0;
   list-style-position: outside;
   text-align: left;
+}
+.row {
+  display: flex;
+}
+.row ul {
+  flex: 1;
+  list-style-position: inside;
+  margin-top: 1rem;
+  margin-left: 3px;
 }
 li + li {
   margin-top: 1rem;
@@ -45,6 +54,9 @@ li > ul {
    margin-top: 1rem;
    list-style-position: outside;
    padding-left: 1rem;
+}
+li li {
+  font-size: .9rem;
 }
 .app {
   width: 100%;
