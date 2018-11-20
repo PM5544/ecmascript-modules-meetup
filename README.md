@@ -1,11 +1,11 @@
-# fronteers-jam-session-2018-10-04
+# ECMAScript modules meetup
 
-This repo contains the files for the lightning talk at the Fronteers jam session on October 4th 2018
+This repo contains the files for the ECMAScript modules meetup on November 22nd 2018
 
 Start the local web server by doing
 
-* `$ git clone https://github.com/PM5544/module-test`
-* `$ cd fronteers-jam-session-2018-10-04`
+* `$ git clone https://github.com/PM5544/ecmascript-modules-meetup`
+* `$ cd ecmascript-modules-meetup`
 * `$ npm i`
 * `$ npm start`
 * open http://localhost:1337 in any browser supporting native ecmascript modules and module loading and check the output in the console
