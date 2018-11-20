@@ -11,9 +11,9 @@ const paths = {
 const external = ['react', 'react-dom', 'App', 'Counter', 'Switcher'];
 
 export default ['App', 'Counter', 'Switcher', 'index'].map(fileName => ({
-  input: `./src/03/${fileName}.mjs`,
+  input: `./src/example/${fileName}.mjs`,
   output: {
-    file: `./public/03/${fileName}.mjs`,
+    file: `./public/example/${fileName}.mjs`,
     paths,
     format: 'es'
   },
@@ -32,11 +32,11 @@ export default ['App', 'Counter', 'Switcher', 'index'].map(fileName => ({
           }
         ]
       ],
-      plugins: ['transform-react-jsx', ['transform-class-properties', { spec: true }]]
+      plugins: ['transform-react-jsx']
     })
   ],
   watch: {
-    include: './src/03/**',
+    include: './src/example/**',
     clearScreen: false
   }
 }));

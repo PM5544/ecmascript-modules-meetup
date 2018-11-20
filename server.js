@@ -12,7 +12,7 @@ const read = promisify(readFile);
   './node_modules/react-ecmascript/react.development.mjs'
 ].map(filePath => {
   const fileName = basename(filePath);
-  return read(filePath).then(content => write(join('.', 'public', '03', fileName), content));
+  return read(filePath).then(content => write(join('.', 'public', 'example', fileName), content));
 });
 
 const server = http.createServer((request, response) => {

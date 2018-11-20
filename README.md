@@ -2,7 +2,7 @@
 
 This repo contains the files for the ECMAScript modules meetup on November 22nd 2018
 
-Start the local web server by doing
+Start the local web server by entering the folowing commands in your terminal
 
 * `$ git clone https://github.com/PM5544/ecmascript-modules-meetup`
 * `$ cd ecmascript-modules-meetup`
@@ -22,6 +22,7 @@ Start the local web server by doing
 - [Brief history of modularity](https://ponyfoo.com/articles/brief-history-of-modularity)
 - [ES6 modules](http://2ality.com/2014/09/es6-modules-final.html)
 - [Module loading support](https://caniuse.com/#feat=es6-module)
+- [spec](https://html.spec.whatwg.org/multipage/scripting.html)
 - [Using ES6 modules](https://developers.google.com/web/fundamentals/primers/modules)
 - [ESM in Node.js](https://nodejs.org/api/esm.html) and [Using ES modules natively in Node.js](http://2ality.com/2017/09/native-esm-node.html)
 

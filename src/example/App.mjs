@@ -6,17 +6,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { number: 0 };
+    this.plus = this.plus.bind(this);
   }
 
   componentDidMount() {
     this.counterInterval = setInterval(() => {
-      const number = this.state.number + 1;
-      this.setState({ number });
+      this.setState(state => ({ number: state.number + 1 }));
     }, 1000);
   }
 
-  plus = () => {
-    this.setState({ number: this.state.number + 5 });
+  componentWillUnmount() {
+    clearInterval(this.counterInterval);
+  }
+
+  plus() {
+    this.setState(state => ({ number: state.number + 5 }));
   };
 
   render() {
