@@ -33,6 +33,9 @@ main {
   padding: 2rem;
   color:#d1e0e8
 }
+main a {
+  color:#d1e0e8;
+}
 h1, h2, h3 {
   margin: 0 0 2rem 0;
 }
@@ -46,7 +49,7 @@ ul {
 }
 .row ul {
   flex: 1;
-  max-width: 11rem;
+  /* max-width: 11rem; */
   list-style-position: inside;
   margin-top: 1rem;
   margin-left: 3px;

@@ -3,18 +3,18 @@
   <link rel="stylesheet" type="text/css" href="../styles.css" />
 </head>
 <body>
-  <header><a href="/">H</a><a href="/01/">01</a><a href="/02/">02</a><a href="/03/">03</a></header>
+  <header><a href="/">H</a></header>
   <main>
     <h1>ECMAScript modules good to know</h1>
     <h2>Loading</h2>
     <ul>
-      <li>defer by default</li>
-      <li>module resolution differences
+      <li>Module loading is a little different than you're probably used to
         <ul>
-          <li>Node.js</li>
-          <li>Browsers</li>
+          <li>Webpack uses Node.js' require() module resolution logic (module loading wasn't final)</li>
+          <li>Browsers module loading uses <a href="https://developers.google.com/web/fundamentals/primers/modules#specifiers">module specifiers</a></li>
         </ul>
       </li>
+      <li>Asynchronous all the way <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element" target="blank">defer by default</a></li>
     </ul>
   </main>
 </body>

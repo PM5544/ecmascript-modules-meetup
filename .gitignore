@@ -1,6 +1,5 @@
 
 node_modules
 .vscode
-public/modules/*
 public/example/*.mjs
 .DS_Store
