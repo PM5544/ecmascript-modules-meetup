@@ -24,5 +24,6 @@ Start the local web server by entering the folowing commands in your terminal
 - [Module loading support](https://caniuse.com/#feat=es6-module)
 - [spec](https://html.spec.whatwg.org/multipage/scripting.html)
 - [Using ES6 modules](https://developers.google.com/web/fundamentals/primers/modules)
+- [Dynamic import](https://developers.google.com/web/updates/2017/11/dynamic-import)
 - [ESM in Node.js](https://nodejs.org/api/esm.html) and [Using ES modules natively in Node.js](http://2ality.com/2017/09/native-esm-node.html)
 
